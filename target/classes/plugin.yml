@@ -1,5 +1,5 @@
 name: KBounty
-version: '${project.version}'
+version: '1.0-SNAPSHOT'
 main: com.kendo.me.kbounty.KBounty
 api-version: '1.16'
 commands:

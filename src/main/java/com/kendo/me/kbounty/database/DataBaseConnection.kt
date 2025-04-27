@@ -23,6 +23,7 @@ class DataBaseConnection (private val plugin : KBounty){
         val connection = getConnection();
         val statement = connection!!.createStatement()
         statement.execute(table);
+        statement.execute("CREATE TABLE IF NOT EXISTS hunts (target_uuid TEXT NOT NULL, hunter_uuid TEXT NOT NULL, started_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (target_uuid, hunter_uuid))")
     }
 
      fun getConnection(): Connection? {

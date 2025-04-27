@@ -1,5 +1,6 @@
 package com.kendo.me.kbounty;
 
+import com.kendo.me.kbounty.commands.WantedMenu
 import com.kendo.me.kbounty.database.DataBaseConnection
 import com.kendo.me.kbounty.events.PlayerLogin
 import com.kendo.me.kbounty.utils.ChatUtils
@@ -29,7 +30,7 @@ class KBounty : JavaPlugin() {
 
 
     private fun registerCommands() {
-
+        getCommand("procurados")?.setExecutor(WantedMenu(this))
         Bukkit.getLogger().info(ChatUtils.format("&aComandos registrados com sucesso!"));
     }
 
