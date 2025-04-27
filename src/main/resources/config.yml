@@ -1,0 +1,3 @@
+bounty:
+  inicial: 1000 # bounty inicial de cada player
+  pirate-permission: ""

@@ -1,0 +1,4 @@
+name: KBounty
+version: '${project.version}'
+main: com.kendo.me.kbounty.KBounty
+api-version: '1.16'
