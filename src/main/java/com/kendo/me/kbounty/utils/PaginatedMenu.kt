@@ -12,9 +12,10 @@ abstract class PaginatedMenu<T>(
     val itemsPerPage: Int = 45
 ) {
     protected var page = 0
-    val maxPage = (allItems.size - 1) / itemsPerPage
     protected lateinit var viewer: Player
     protected lateinit var allItems: List<T>
+    val maxPage: Int
+        get() = (allItems.size - 1) / itemsPerPage
 
     fun open(player: Player, items: List<T>, startPage: Int = 0) {
         this.viewer = player
@@ -25,7 +26,6 @@ abstract class PaginatedMenu<T>(
     }
 
     open fun buildInventory(): Inventory {
-
         val inv = Bukkit.createInventory(null, 54, "$title (Página ${page + 1}/${maxPage + 1})")
 
         val start = page * itemsPerPage

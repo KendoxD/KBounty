@@ -12,7 +12,7 @@ class BountyMenu(private val plugin: KBounty) : PaginatedMenu<PlayerModel>("§eP
     override fun renderItem(player: PlayerModel): ItemStack {
         val skull = ItemStack(Material.PLAYER_HEAD)
         val meta = skull.itemMeta as SkullMeta
-        val offlinePlayer = Bukkit.getOfflinePlayer(player.uuid);
+        val offlinePlayer = Bukkit.getOfflinePlayer(player.uuid)
         meta.owningPlayer = offlinePlayer
         meta.setDisplayName(ChatUtils.format("&c${offlinePlayer.name}"))
 

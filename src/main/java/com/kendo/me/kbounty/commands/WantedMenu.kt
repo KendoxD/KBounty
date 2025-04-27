@@ -19,15 +19,15 @@ class WantedMenu(private val plugin : KBounty) :  CommandExecutor {
         args: Array<out String?>
     ): Boolean {
         if(sender is Player) {
-            val player = sender;
-            val allPlayersWithBounty = PlayerDAO(plugin).getAllPlayersWithBounty();
+            val player = sender
+            val allPlayersWithBounty = PlayerDAO(plugin).getAllPlayersWithBounty() // Aqui obtemos os jogadores com bounty
             val menu = BountyMenu(plugin)
-            menu.open(player, allPlayersWithBounty);
-            return true;
+            menu.open(player, allPlayersWithBounty)  // Passamos a lista de jogadores com bounty para o menu
+            return true
         }
 
         sender.sendMessage(ChatUtils.format("&cApenas jogadores podem utilizar esse comando!"))
-        return false;
+        return false
     }
 
 }
